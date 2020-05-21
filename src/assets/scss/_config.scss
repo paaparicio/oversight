@@ -1,0 +1,32 @@
+@import "fonts";
+
+$primary-font: 'Montserrat', sans-serif;
+
+$primary-color: #FF005C;
+
+$white: white;
+$black: black;
+
+//## START - Navigation ##
+  $navigation--font_family: $primary-font;
+  $navigation--font_size: 25px;
+  $navigation--font_weight: 800;
+  $navigation--font_color: #670126;
+  $navigation--font_color--active: $primary-color;
+//## END - Navigation **
+
+//## START - Footer ##
+  $footer--font_family: $primary-font;
+  $footer--font_size: 13px;
+  $footer--font_weight: 800;
+  $footer--font_color: grey;
+  $footer--icon-font_size: 20px;
+//## END - Footer ##
+
+
+//## START - Header ##
+  $header--font_family: $primary-font;
+  $header--font_size: 12px;
+  $header--font_weight: 400;
+  $header--font_color: $white;
+//## END - Header ##
