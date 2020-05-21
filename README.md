@@ -1,24 +1,5 @@
-# oversight
+### Welcome in Oversight
+Oversight is a French video game created for the final examen of [Gobelins, l'école de l'image.](https://www.gobelins.fr/)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Server
+Adress: [https://server-oversight.herokuapp.com/](https://server-oversight.herokuapp.com/)
