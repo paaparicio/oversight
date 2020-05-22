@@ -4,13 +4,14 @@
     <div class="container">
       <div class="container--left">
         <Navigation/>
-        <Footer/>
+        <Footer v-if="$store.state.width >= $store.state.breakpoint"/>
+        <p style="color: white;">{{$store.width}}</p>
       </div>
 
 
       <div class="container--right">
         <Header/>
-        <router-view class="container-content"/>
+        <router-view class="--content"/>
       </div>
     </div>
 
@@ -27,6 +28,21 @@
       Navigation,
       Header,
       Footer
+    },
+    methods: {
+      getViewportsUnit: function() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+    },
+    mounted() {
+      this.getViewportsUnit();
+      this.$store.commit('getResponsiveSize');
+
+      window.addEventListener('resize', () => {
+        this.getViewportsUnit();
+        this.$store.commit('getResponsiveSize')
+      })
     }
   }
 </script>
@@ -38,18 +54,24 @@
   #app {
 
     .container {
-      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);;
 
       display: flex;
 
       padding: 25px 50px;
       box-sizing: border-box;
 
-      &--right {padding-left: 15vw;}
-
+      &--right {padding-left: 10vw;}
+      .--content {overflow-y: scroll}
       div {
         display: flex;
         flex-direction: column;
+      }
+
+      @media (max-width: $breakpoint) {
+        padding: 25px 25px 0 0;
+
+        &--right {padding-left: 25px}
       }
     }
   }

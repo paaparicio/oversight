@@ -1,13 +1,20 @@
 <template>
-    <div id="galerie"></div>
+    <div id="galerie">
+        <Pictures />
+    </div>
 </template>
 
 <script>
+    import Pictures from "../components/galerie/pictures";
+
     export default {
-        name: "Galerie"
+        name: "Galerie",
+        components: {
+            Pictures
+        }
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    @import "./../assets/scss/config";
 </style>

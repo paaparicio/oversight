@@ -1,7 +1,7 @@
 <template>
     <header>
         <img src="./../../assets/images/logo.png" alt="">
-        <p>Dans une société totalitaire , habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.
+        <p v-if="$store.state.width >= $store.state.breakpoint">Dans une société totalitaire , habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.
             Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.</p>
     </header>
 </template>
@@ -42,6 +42,12 @@ header {
 
         border-top: 1px solid $header--font_color;
         box-sizing: border-box;
+    }
+
+    @media (max-width: $breakpoint) {
+        flex-direction: column;
+
+        img {width: 100%;}
     }
 }
 </style>

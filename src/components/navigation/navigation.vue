@@ -57,6 +57,17 @@ ul {
 
              background-color: $navigation--font_color--active;
          }
+
+        @media (max-width: $breakpoint) {
+            flex-direction: row-reverse;
+
+            span {
+                width: 30px;
+
+                margin-left: 0;
+                margin-right: 20px;
+            }
+        }
     }
 }
 </style>
