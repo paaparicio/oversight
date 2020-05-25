@@ -2,17 +2,15 @@
   <div id="app">
 
     <div class="container">
-      <div class="container--left">
+      <section class="container--left">
         <Navigation/>
         <Footer v-if="$store.state.width >= $store.state.breakpoint"/>
         <p style="color: white;">{{$store.width}}</p>
-      </div>
-
-
-      <div class="container--right">
+      </section>
+      <section class="container--right">
         <Header/>
         <router-view class="--content"/>
-      </div>
+      </section>
     </div>
 
   </div>
@@ -62,8 +60,8 @@
       box-sizing: border-box;
 
       &--right {padding-left: 10vw;}
-      .--content {overflow-y: scroll}
-      div {
+      .--content {overflow-y: scroll; height: 100%;}
+      section {
         display: flex;
         flex-direction: column;
       }
