@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li v-for="(link, i) in links"
+        <li v-for="(link, i) in $t('navigation')"
             :key="i">
 
             <router-link :to="{name: link}">
@@ -14,12 +14,7 @@
 
 <script>
     export default {
-        name: "navigation",
-        data() {
-            return {
-                links: ['Home', 'Download', 'About', 'Galerie', 'Team']
-            }
-        }
+        name: "navigation"
     }
 </script>
 

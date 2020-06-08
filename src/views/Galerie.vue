@@ -1,6 +1,6 @@
 <template>
     <div id="galerie">
-        <Pictures />
+        <Pictures :images="$t('views.galerie')"/>
     </div>
 </template>
 
@@ -9,12 +9,12 @@
 
     export default {
         name: "Galerie",
-        components: {
-            Pictures
-        }
+        components: {Pictures}
     }
 </script>
 
 <style lang="scss" scoped>
     @import "./../assets/scss/config";
+
+    #galerie {height: 100%}
 </style>

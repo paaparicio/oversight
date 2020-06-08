@@ -3,6 +3,7 @@
 $primary-font: 'Montserrat', sans-serif;
 
 $primary-color: #FF005C;
+$secondary-color: #01F7F8;
 
 $white: white;
 $black: black;
@@ -15,7 +16,7 @@ $breakpoint: 1024px;
   $navigation--font_weight: 800;
   $navigation--font_color: #670126;
   $navigation--font_color--active: $primary-color;
-//## END - Navigation **
+//## END - Navigation ##
 
 //## START - Footer ##
   $footer--font_family: $primary-font;
@@ -32,3 +33,70 @@ $breakpoint: 1024px;
   $header--font_weight: 400;
   $header--font_color: $white;
 //## END - Header ##
+
+//## START - About ##
+  $about--font_family: $primary-font;
+  $about--explication-font_size: 15px;
+  $about--apercu-font_size: 20px;
+  $about--apercu-font_color: $primary-color;
+//## END - About ##
+
+//## START - Galerie ##
+  $galerie--grid_gap: 25px;
+  $galerie--grid_col: 3;
+
+  @media (max-width: $breakpoint) {
+    $galerie--grid_col: 1;
+  }
+//## END - Galerie ##
+
+//## START - Team ##
+  $team--grid_gap: 25px;
+  $team--font-family: $primary-font;
+  $team--font_color: $white;
+
+  $team--name-font_size: 20px;
+
+  $team--speciality-font_size: 11px;
+  $team--speciality-font_color: $primary-color;
+  $team--speciality-span_color: grey;
+  $team--speciality-span_height: 1px;
+
+  $team--text-font_size: 11px;
+
+  @media (max-width: $breakpoint) {
+    $team--grid_gap: 40px;
+    $team--text-font_size: 15px;
+  }
+//## END - Team ##
+
+//## START - Trailer ##
+  $trailer--font_family: $primary-font;
+  $trailer--font_size: 15px;
+  $trailer--font_color: $white;
+//## END - Trailer ##
+
+//## START - Download ##
+  $download--font_family: $primary-font;
+
+  $download--text-font_size: 12px;
+  $download--text-font_color: $white;
+
+  $download--title-font_size: 18px;
+  $download--title-font_color: $primary-color;
+//## END - Download ##
+
+//## START - Game ##
+  $game--font-family: $primary-font;
+  $game--font-color: $white;
+
+  $game--buttons-font_size: 20px;
+  $game--buttons-letters_spacing: 2px;
+  $game--buttons-blue: $secondary-color;
+  $game--buttons-pink: $primary-color;
+
+  $game--introduction-font_size: 20px;
+
+  $game--description-font_size: 15px;
+//## END - Game ##
+

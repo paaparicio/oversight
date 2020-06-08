@@ -1,7 +1,8 @@
 <template>
     <ul>
-        <Picture v-for="i in 10"
-                 :key="i"/>
+        <Picture v-for="(image, i) in images"
+                 :key="i"
+                 :image="image"/>
     </ul>
 </template>
 
@@ -9,7 +10,10 @@
     import Picture from "./picture";
 
     export default {
-        components: {Picture}
+        components: {Picture},
+        props: {
+            images: Array
+        }
     }
 </script>
 
@@ -18,11 +22,13 @@
 
     ul {
         display: grid;
-        grid-gap: 25px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-gap: $galerie--grid_gap;
+        grid-template-columns: repeat($galerie--grid_col, 1fr);
 
         @media (max-width: $breakpoint) {
-            grid-template-columns: repeat(1, 1fr);
+            @import "./../../assets/scss/config";
+
+            grid-template-columns: repeat($galerie--grid_col, 1fr);
         }
     }
 </style>

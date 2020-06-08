@@ -1,13 +1,22 @@
 <template>
-    <header>
-        <img src="./../../assets/images/logo.png" alt="">
-        <p v-if="$store.state.width >= $store.state.breakpoint">Dans une société totalitaire , habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.
-            Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.</p>
+    <header :class="{'--home' : $route.name === 'Home'}">
+        <img v-if="$route.name === 'Home'"
+             :src="require(`@/assets/images/${$t('header.logo-center')}`)"
+             alt="">
+
+        <img v-else
+             :src="require(`@/assets/images/${$t('header.logo-left')}`)"
+             alt="">
+
+        <p v-if="$store.state.width >= $store.state.breakpoint && $route.name !== 'Home'">
+            {{ $t('header.description') }}
+        </p>
     </header>
 </template>
 
 <script>
     export default {
+
     }
 </script>
 
@@ -19,6 +28,12 @@ header {
     align-items: flex-start;
 
     margin-bottom: 5vh;
+
+    &.--home {
+        justify-content: center;
+
+        img {border-style:  none;}
+    }
 
     img {
         width: 35%;

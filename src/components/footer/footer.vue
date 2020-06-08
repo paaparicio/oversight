@@ -1,15 +1,11 @@
 <template>
     <ul>
-        <li>
-            <router-link to="#">
-                <i class="fab fa-instagram"></i>
-                <span>Oversight_thegame</span>
-            </router-link>
-        </li>
-        <li>
-            <router-link to="#">
-                <i class="fab fa-discord"></i>
-                <span>discord/oversight</span>
+        <li v-for="(link, i) in $t('footer')"
+            :key="i">
+
+            <router-link :to="link.url">
+                <i :class="link.icon"></i>
+                <span>{{ link.name }}</span>
             </router-link>
         </li>
     </ul>

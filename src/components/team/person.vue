@@ -1,14 +1,17 @@
 <template>
     <li>
         <div class="--image">
-            <div class="img"></div>
+            <img :src="require(`@/assets/images/team/${person.image}`)" alt="Profile personne">
         </div>
-        <h2>Emilien</h2>
+
+        <h2>{{person.name}}</h2>
+
         <h3>
-            Developpeur
+            {{person.speciality}}
             <span v-if="$store.state.width >= $store.state.breakpoint"></span>
         </h3>
-        <p v-for="(paragraphe, i) in getTextParagraphe(text)"
+
+        <p v-for="(paragraphe, i) in getTextParagraphe(person.text)"
            :key="i">
             {{paragraphe}}
         </p>
@@ -16,17 +19,13 @@
 </template>
 
 <script>
+    import {paragraphe} from "../../mixins/global";
+
     export default {
-        data() {
-          return {
-              text: "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\n \nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
-          }
+        props: {
+            person: Object
         },
-        methods: {
-            getTextParagraphe: function(text) {
-                return text.split('\n \n')
-            }
-        }
+        mixins: [paragraphe]
     }
 </script>
 
@@ -34,54 +33,58 @@
     @import "./../../assets/scss/config";
 
     li {
-        font-family: $primary-font;
-        color: $white;
+        font-family: $team--font-family;
+        color: $team--font_color;
 
         .--image {
             padding-top: 20px;
             margin-bottom: 20px;
 
-            border-top: 1px solid $white;
+            border-top: $team--speciality-span_height solid $team--font_color;
             box-sizing: border-box;
 
-            .img {
+            img {
                 height: 100px;
-                background-color: $primary-color;
+                width: 100%;
+
+                object-fit: cover;
+                object-position: center;
             }
         }
-        h2 {font-size: 20px;}
+        h2 {font-size: $team--name-font_size;}
         h3 {
             display: flex;
             align-items: center;
 
             margin-bottom: 20px;
 
-            font-size: 11px;
+            font-size: $team--speciality-font_size;
             text-transform: lowercase;
-            color: $primary-color;
+            color: $team--speciality-font_color;
 
             span {
                 display: block;
                 width: 100%;
-                height: 1px;
+                height: $team--speciality-span_height;
 
                 margin-top: 2px;
                 margin-left: 10px;
 
-                background-color: grey;
+                background-color: $team--speciality-span_color;
             }
         }
         p {
-            font-size: 11px;
+            font-size: $team--text-font_size;
             margin-bottom: 15px;
 
             &:last-child {margin-bottom: 0}
         }
 
         @media (max-width: $breakpoint) {
-            .--image {width: 50%;}
-            h2 {font-size: 20px}
-            h3, p {font-size: 15px}
+            @import "./../../assets/scss/config";
+
+            .--image img {height: 200px}
+            h3, p {font-size: $team--text-font_size}
         }
     }
 </style>
