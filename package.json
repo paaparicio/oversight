@@ -13,8 +13,10 @@
     "gsap": "^3.2.6",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
+    "tarteaucitronjs": "^1.4.0",
     "three": "^0.117.1",
     "vue": "^2.6.11",
+    "vue-analytics": "^5.22.1",
     "vue-i18n": "^8.18.1",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"

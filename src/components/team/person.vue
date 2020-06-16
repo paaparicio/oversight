@@ -15,6 +15,36 @@
            :key="i">
             {{paragraphe}}
         </p>
+
+        <div class="--social">
+            <a v-if="person.social.instagram"
+               :href="person.social.instagram"
+               target="_blank">
+
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a v-if="person.social.linkedin"
+               :href="person.social.linkedin"
+               target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a v-if="person.social.twitter"
+               :href="person.social.twitter"
+               target="_blank">
+
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a v-if="person.social.website"
+               :href="person.social.website"
+               target="_blank">
+
+                <i class="fas fa-globe"></i>
+            </a>
+        </div>
     </li>
 </template>
 
@@ -36,6 +66,9 @@
         font-family: $team--font-family;
         color: $team--font_color;
 
+        opacity: 0;
+        transform: translateY(10px);
+
         .--image {
             padding-top: 20px;
             margin-bottom: 20px;
@@ -47,8 +80,23 @@
                 height: 100px;
                 width: 100%;
 
-                object-fit: cover;
-                object-position: center;
+                object-fit: contain;
+                object-position: left;
+            }
+        }
+        .--social {
+            a {
+                font-size: 20px;
+                color: $team--font_color;
+
+                margin-right: 10px;
+
+                transition: .3s;
+
+                &:hover {
+                    color: $primary-color;
+                    transition: .3s;
+                }
             }
         }
         h2 {font-size: $team--name-font_size;}
@@ -85,6 +133,10 @@
 
             .--image img {height: 200px}
             h3, p {font-size: $team--text-font_size}
+        }
+
+        @media (min-width: $breakpoint--min) {
+            .--image img {height: 150px}
         }
     }
 </style>

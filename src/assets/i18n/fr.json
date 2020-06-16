@@ -8,8 +8,8 @@
     "description": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
   },
   "footer": [
-    {"name":  "Oversight_thegame", "url": "#", "icon":  "fab fa-instagram"},
-    {"name":  "discord/skqmenc", "url": "#", "icon":  "fab fa-discord"}
+    {"name":  "Oversight_thegame", "url": "https://www.instagram.com/oversight_thegame/?hl=fr", "icon":  "fab fa-instagram"},
+    {"name":  "discord/skqmenc", "url": "https://discord.gg/NwdvkMg", "icon":  "fab fa-discord"}
   ],
   "views": {
     "home": {
@@ -51,51 +51,81 @@
     "team": {
       "persons": [
         {
-          "image": "placeholder.jpg",
-          "name": "Pablo",
+          "image": "emilien.png",
+          "name": "Emillien",
           "speciality": "Développeur",
-          "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
+          "text": "Une notification (encore) sur votre téléphone ? C'est grâce à lui. Il a développé toute la partie mobile de Oversight. Alors est-ce vraiment votre copine qui vous envoie un message ou lui ? (Bonne question)",
+          "social": {
+            "instagram": null,
+            "linkedin": "https://www.linkedin.com/in/emilien-vandevelde-967450155/",
+            "twitter": null,
+            "website": "http://emilienvandevelde.fr/"
+          }
         },
         {
-          "image": "placeholder.jpg",
-          "name": "Grégory",
-          "speciality": "Développeur",
-          "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
-        },
-        {
-          "image": "placeholder.jpg",
-          "name": "Émilien",
-          "speciality": "Développeur",
-          "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
-        },
-        {
-          "image": "placeholder.jpg",
+          "image": "nathan.png",
           "name": "Nathan",
           "speciality": "Graphiste",
-          "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
+          "text": "Avec sa passion pour l'animation et le chara-design, il a réalisé tout les personnages du jeu. Grâce à lui toute ces petites bouilles peuvent bouger et vivre correctement. Enfin si on peut vivre correctement dans Oversight. Grand amateur de jeux vidéos, c'est notre tester né !",
+          "social": {
+            "instagram": "https://www.instagram.com/nathan_mardoukh",
+            "linkedin": "https://www.linkedin.com/in/nathan-mardoukh-ba1316ba/",
+            "twitter": null,
+            "website": null
+          }
         },
         {
-          "image": "placeholder.jpg",
-          "name": "Rachelle",
+          "image": "greg.png",
+          "name": "Gregory",
+          "speciality": "Développeur",
+          "text": "Entre développer la quête principale du jeu, mettre en place le système de points de Oversight, il a réussi à trouver un peu de temps pour s'amuser sur le jeu en tapant dans toutes les poubelles de la ville (du temps certes mais uniquement pour ça). ",
+          "social": {
+            "instagram": "https://www.instagram.com/web_gregory_colombe/",
+            "linkedin": "https://www.linkedin.com/in/gr%C3%A9gory-colombe-9946a0172/",
+            "twitter": null,
+            "website": null
+          }
+        },
+        {
+          "image": "rachel.png",
+          "name": "Rachel",
           "speciality": "Graphiste",
-          "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes. Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points.\nDans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindres faits et gestes.Vous découvrirez un trajet semé d'embuches et d'occasion de perdre ou gagner des points."
+          "text": "Ayant découvert la 3D depuis peu, elle s'est lancé dans ce projet d'envergure en réalisant la modélisation de la maps de Oversight. Alors si les passages piétons et les poubelles dans la ville vous agace, c'est par ici qu'il faudra se plaindre. ",
+          "social": {
+            "instagram": "https://www.instagram.com/inii_tv/",
+            "linkedin": "https://www.linkedin.com/in/rachel-duvauchelle-435243182/",
+            "twitter": null,
+            "website": "https://iniitv.myportfolio.com/"
+          }
+        },
+        {
+          "image": "pablo.png",
+          "name": "Pablo",
+          "speciality": "Développeur",
+          "text": "Un serveur créé aussi rapidement ? Ce site si beau et sans aucun problème ? Est-ce vraiment possible ? ll l'a fait. Il n'y a aucun problème entre votre téléphone et votre ordinateur pendant le jeu, c'est grâce à lui.",
+          "social": {
+            "instagram": "https://www.instagram.com/pablo_aprc/?hl=fr",
+            "linkedin": "https://www.linkedin.com/in/pablo-aparicio-069803171/",
+            "twitter": null,
+            "website": null
+          }
         }
       ],
       "additional": {
         "name": "Dadaoudidi",
         "speciality": "Sound Design",
-        "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindre faits et gestes. Vous découvrirez un trajet semé d'embûches et d'occasions de perdre ou gagner des points."
+        "text": "Vous pouvez retrouver les créations de Dadaoudidi sur SoundCloud. Il a réalisé tout les bruitages et musiques du jeu \npour le bonheur de vos oreilles."
       }
     },
     "galerie": [
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"},
-      {"url":  "placeholder.jpg", "alt": "Placeholder de la galerie"}
+      {"url":  "affiche-1.jpg", "alt": "Oversight affiche"},
+      {"url":  "affiche-4.jpg", "alt": "Oversight affiche"},
+      {"url":  "affiche-2.jpg", "alt": "Oversight image"},
+      {"url":  "affiche-1.jpg", "alt": "Oversight image"},
+      {"url":  "affiche-3.jpg", "alt": "Oversight image"},
+      {"url":  "affiche-2.jpg", "alt": "Oversight image"},
+      {"url":  "affiche-4.jpg", "alt": "Oversight image"},
+      {"url":  "affiche-1.jpg", "alt": "Oversight image"}
     ]
   }
 }

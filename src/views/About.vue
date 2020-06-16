@@ -1,17 +1,17 @@
 <template>
     <div id="about">
         <div class="--top">
-            <p>{{ $t('views.about.text') }}</p>
+            <p class="--opacity">{{ $t('views.about.text') }}</p>
 
-            <div>
+            <div class="--opacity">
                 <img :src="image" alt="">
             </div>
         </div>
 
         <div class="--apercu">
-            <p>{{ $t('views.about.question') }}</p>
+            <p class="--opacity">{{ $t('views.about.question') }}</p>
 
-            <div>
+            <div ref="iframe">
                 <Video :url="$t('views.about.url')"/>
             </div>
         </div>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
+
     import Video from "../components/default/video";
 
     export default {
@@ -28,6 +30,35 @@
             return {
                 image: require(`@/assets/images/about/${this.$i18n.messages[this.$i18n.locale].views.about.image}`)
             }
+        },
+        computed: {
+            ...mapState(['width', 'breakpoint','camera'])
+        },
+        mounted() {
+            const _ = this;
+            const opacity = document.querySelectorAll('#about .--opacity');
+            const {iframe} = _.$refs;
+            const tl = new _.TimelineLite();
+
+            if(this.width < this.breakpoint) {
+                tl.to(this.camera.position, 1, {x: -7, y: 15, z: -8, ease: _.Sine.easeInOut})
+            } else {
+                tl.to(this.camera.position, 1, {x: -6, y: 15, z: -10, ease: _.Sine.easeInOut})
+            }
+
+            tl
+                .to(opacity, 1, {css: {alpha: 1, translateY: 0}, stagger: .1, ease: _.Sine.easeInOut})
+                .to(iframe, .5, {css: {width: '100%'}, ease: _.Sine.easeOut}, "-=.8")
+        },
+        beforeRouteLeave(to, from, next) {
+            const _ = this;
+            const opacity = document.querySelectorAll('#about .--opacity');
+            const {iframe} = _.$refs;
+            const tl = new _.TimelineLite({onComplete: next});
+
+            tl
+                .to(iframe, .5, {css: {width: '0%'}, ease: _.Sine.easeOut})
+                .to(opacity, .5, {css: {alpha: 0, translateY: 10}, stagger: .1, ease: _.Sine.easeInOut})
         }
     }
 </script>
@@ -46,7 +77,10 @@
             display: flex;
             font-size: $about--explication-font_size;
 
-            p {width: 35%}
+            p {
+                width: 35%;
+                padding-right: 20px;
+            }
 
             div {
                 width: 65%;
@@ -69,10 +103,15 @@
 
             div {
                 height: 300px;
-                width: 100%;
+                width: 0%;
 
                 margin-top: 25px;
             }
+        }
+
+        .--opacity {
+            opacity: 0;
+            transform: translateY(10px);
         }
 
         @media (max-width: $breakpoint) {
@@ -101,6 +140,11 @@
                     height: auto;
                     margin: 15px 0;
                 }
+            }
+        }
+        @media (min-width: $breakpoint--min) {
+            .--apercu {
+                div {height: 500px;}
             }
         }
     }

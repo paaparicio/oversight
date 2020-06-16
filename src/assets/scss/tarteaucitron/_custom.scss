@@ -1,0 +1,51 @@
+@import '../config';
+
+#tarteaucitronRoot {
+
+  #tarteaucitronAlertBig {
+    background-color: rgba(0, 0, 0, .5);
+
+    #tarteaucitronDisclaimerAlert {font-family: $primary-font}
+    #tarteaucitronPersonalize, #tarteaucitronCloseAlert {
+      background-color: transparent;
+      transition: .3s;
+
+      &:hover {transition: .3s}
+      &:focus {outline: none}
+    }
+    #tarteaucitronPersonalize {
+      border: 1px solid $secondary-color;
+
+      font-family: $primary-font;
+      color: $secondary-color;
+
+      &:hover {box-shadow: 0 0 10px 0 rgba(1, 247, 248, .5)}
+    }
+    #tarteaucitronCloseAlert {
+      border: 1px solid $primary-color;
+
+      font-family: $primary-font;
+      color: $primary-color;
+
+      &:hover {box-shadow: 0 0 10px 0 rgba(255, 0, 92, .5)}
+    }
+  }
+
+  #tarteaucitronClosePanel:focus {outline: none}
+
+  #tarteaucitronServices {
+    font-family: $primary-font;
+
+    .tarteaucitronH1 {color: $primary-color}
+
+    button:focus {outline: none}
+
+    .tarteaucitronIsAllowed {border-color: $secondary-color !important}
+    .tarteaucitronIsDenied {border-color: $primary-color !important}
+    .tarteaucitronAllow {
+      color: #333333 !important;
+      background-color: $secondary-color !important
+    }
+    .tarteaucitronDeny {background-color: $primary-color !important}
+  }
+}

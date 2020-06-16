@@ -7,7 +7,12 @@
 
         <p>{{name}}</p>
 
-        <a :href="file" download>Télécharger</a>
+        <a @click="onSendAnalyticsEvent"
+           :href="file"
+           download>
+
+            Télécharger
+        </a>
     </div>
 </template>
 
@@ -17,6 +22,11 @@
             name: String,
             logo: String,
             file: String
+        },
+        methods: {
+          onSendAnalyticsEvent: function() {
+              this.$ga.event('Download', 'Click', this.name)
+          }
         },
         data() {
             return {
@@ -37,6 +47,10 @@
         border: 1px solid $primary-color;
         padding: 25px;
         box-sizing: border-box;
+
+        margin-left: 25px;
+
+        &:first-child {margin-left: 0;}
 
         .--image {
             width: 75%;

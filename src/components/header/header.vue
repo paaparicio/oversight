@@ -7,10 +7,6 @@
         <img v-else
              :src="require(`@/assets/images/${$t('header.logo-left')}`)"
              alt="">
-
-        <p v-if="$store.state.width >= $store.state.breakpoint && $route.name !== 'Home'">
-            {{ $t('header.description') }}
-        </p>
     </header>
 </template>
 
@@ -32,11 +28,14 @@ header {
     &.--home {
         justify-content: center;
 
-        img {border-style:  none;}
+        img {
+            width: 20%;
+            border-style:  none;
+        }
     }
 
     img {
-        width: 35%;
+        width: 20%;
 
         padding-top: 10px;
 
@@ -63,6 +62,7 @@ header {
         flex-direction: column;
 
         img {width: 100%;}
+        &.--home img {width: 100%}
     }
 }
 </style>

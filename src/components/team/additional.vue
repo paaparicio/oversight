@@ -27,6 +27,9 @@
         font-family: $team--font-family;
         color: $team--font_color;
 
+        opacity: 0;
+        transform: translateX(-10px);
+
         h2 {font-size: 20px;}
         div {
             display: flex;

@@ -28,6 +28,7 @@
                 align-items: center;
 
                 color: $footer--font_color;
+                transition: .3s;
 
                 i {font-size: $footer--icon-font_size;}
 
@@ -37,6 +38,11 @@
                     font-weight: $footer--font_weight;
 
                     margin-left: 10px;
+                }
+
+                &:hover {
+                    color: $primary-color;
+                    transition: .3s;
                 }
             }
         }

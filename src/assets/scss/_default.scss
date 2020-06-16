@@ -6,3 +6,7 @@ body {overflow: hidden;}
 
 ul li {list-style: none;}
 a {text-decoration: none;}
+
+.--content::-webkit-scrollbar {
+  display: none;
+}

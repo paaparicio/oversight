@@ -38,7 +38,7 @@
             width: 65%;
 
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
 
             padding-left: 50px;
             box-sizing: border-box;

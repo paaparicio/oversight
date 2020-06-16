@@ -20,7 +20,7 @@
           }
         },
         computed: {
-            ...mapState(['camera', 'scene', 'renderer'])
+            ...mapState(['width', 'breakpoint', 'camera', 'scene', 'renderer', 'rotation', 'gyroscope', 'controller', 'move'])
         },
         methods: {
             init: function() {
@@ -30,19 +30,21 @@
                 this.scene['background'] = new THREE.Color(this.background);
                 this.renderer.shadowMap.enabled = true;
 
-                this.camera.position.set(0, 5, 1);
+                this.camera.position.set(0, 50, 1);
+                (this.width < this.breakpoint) && (this.camera.rotation.x = -90 * Math.PI / 180);
+                this.camera.rotation.x = -90 * Math.PI / 180
             },
             FPSControls: function() {
                 this.TweenMax.to(this.camera.rotation, 0.5, {
                     x: this.mouse.y / 7,
-                    y: -this.mouse.x / 2
+                    y: (-this.mouse.x + this.rotation) / 2
                 })
             },
             onMouseMove: function(event) {
                 this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
-                this.FPSControls();
+                (this.move) && this.FPSControls();
             },
             onWindowResize: function() {
                 this.camera['aspect'] = window.innerWidth / window.innerHeight;
@@ -57,21 +59,22 @@
 
                 this.scene.add(spotLight);
             },
-            getModel: function() {
+            getModel: function(url) {
                new GLTFLoader().load(
-                    'assets/models/city.gltf',
+                    url,
                     gltf => {
                         const model = gltf.scene;
                         const scale = 3;
 
                         model.scale.set(scale, scale, scale);
 
-                        this.scene.add(model)
+                        this.scene.add(model);
                     }
                 );
             },
             animate: function() {
               requestAnimationFrame(this.animate);
+              this.gyroscope && this.controller.update();
               this.renderer.render(this.scene, this.camera);
             }
         },
@@ -79,11 +82,12 @@
             const _ = this;
 
             _.init();
-            _.getModel();
+            _.getModel('assets/models/mobile.gltf');
             _.setSceneLights();
             _.animate();
 
             window.addEventListener('resize', _.onWindowResize);
+            window.addEventListener('deviceorientation', () => this.controller.update());
             window.addEventListener('mousemove', e => _.onMouseMove(e));
         }
     }

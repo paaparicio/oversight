@@ -8,7 +8,8 @@ $secondary-color: #01F7F8;
 $white: white;
 $black: black;
 
-$breakpoint: 1024px;
+$breakpoint: 1023px;
+$breakpoint--min: 1440px;
 
 //## START - Navigation ##
   $navigation--font_family: $primary-font;
@@ -42,11 +43,15 @@ $breakpoint: 1024px;
 //## END - About ##
 
 //## START - Galerie ##
-  $galerie--grid_gap: 25px;
-  $galerie--grid_col: 3;
+  $galerie--grid_gap: 20px;
+  $galerie--grid_col: 4;
 
   @media (max-width: $breakpoint) {
     $galerie--grid_col: 1;
+  }
+
+  @media (min-width: $breakpoint--min) {
+    $galerie--grid_col: 4;
   }
 //## END - Galerie ##
 

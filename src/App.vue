@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-
     <div class="container"
          :class="{'--game' : $route.name === 'Game'}">
 
       <section class="container--left"
-               v-if="$route.name !== 'Game'">
+               v-if="$route.name !== 'Introduction'">
 
         <Navigation/>
-        <Footer v-if="$store.state.width >= $store.state.breakpoint"/>
+        <Footer v-if="$store.state.width > $store.state.breakpoint"/>
       </section>
 
-      <section class="container--right">
-        <Header v-if="$route.name !== 'Game'"/>
+      <section :class="[($route.name === 'Home' && $store.state.width >= $store.state.breakpoint)? 'container--right-home' : 'container--right']">
+        <Header v-if="$route.name !== 'Game'&& $route.name !== 'Introduction'"/>
         <router-view class="--content"/>
       </section>
     </div>
@@ -28,6 +27,8 @@
 
   import Three from "./components/three/three";
 
+  import {analytics} from "./mixins/analytics";
+
   export default {
     components: {
       Navigation,
@@ -41,14 +42,18 @@
         document.documentElement.style.setProperty('--vh', `${vh}px`);
       }
     },
+    mixins: [analytics],
     mounted() {
       this.getViewportsUnit();
       this.$store.commit('getResponsiveSize');
 
       window.addEventListener('resize', () => {
         this.getViewportsUnit();
-        this.$store.commit('getResponsiveSize')
-      })
+        this.$store.commit('getResponsiveSize');
+      });
+    },
+    beforeRouteEnter(to, from) {
+      console.log(to, from)
     }
   }
 </script>
@@ -60,7 +65,8 @@
   #app {
 
     .container {
-      height: calc(var(--vh, 1vh) * 100);
+      //height: calc(var(--vh, 1vh) * 100);
+      height: 100vh;
       width: 100vw;
 
       display: flex;
@@ -69,9 +75,20 @@
       padding: 25px 50px;
       box-sizing: border-box;
 
+      &--left {z-index: 999}
+
       &--right {
         width: 100%;
         padding-left: 10vw;
+      }
+
+      &--right-home {
+        height: calc(100vh - 50px);
+        width: calc(100vw - 100px);
+
+        position: absolute;
+        top: 25px;
+        left: 50px;
       }
 
       .--content {overflow-y: scroll}

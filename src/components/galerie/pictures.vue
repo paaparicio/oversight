@@ -12,7 +12,7 @@
     export default {
         components: {Picture},
         props: {
-            images: Array
+            images: Array,
         }
     }
 </script>
@@ -21,14 +21,12 @@
     @import "./../../assets/scss/config";
 
     ul {
-        display: grid;
-        grid-gap: $galerie--grid_gap;
-        grid-template-columns: repeat($galerie--grid_col, 1fr);
+        column-gap: $galerie--grid_gap;
+        column-count: $galerie--grid_col;
+
 
         @media (max-width: $breakpoint) {
-            @import "./../../assets/scss/config";
-
-            grid-template-columns: repeat($galerie--grid_col, 1fr);
+            column-count: 1;
         }
     }
 </style>

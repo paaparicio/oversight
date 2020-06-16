@@ -8,11 +8,13 @@ import Team from "../views/Team";
 import Download from "../views/Download";
 import Trailer from "../views/Trailer";
 import Game from "../views/Game";
+import Introduction from "../views/Introduction";
 
 Vue.use(VueRouter);
 
   const routes = [
-  {path: '/', name: 'Home', component: Home},
+  {path: '/', name: 'Introduction', component: Introduction},
+  {path: '/home', name: 'Home', component: Home},
   {path: '/trailer', name: 'Trailer', component: Trailer},
   {path: '/download', name: 'Download', component: Download},
   {path: '/about', name: 'About', component: About},
