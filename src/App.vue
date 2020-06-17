@@ -17,10 +17,13 @@
     </div>
 
     <Three />
+    <audio ref="audio" src="./assets/audio/ambiance.mp3"></audio>
   </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex';
+
   import Header from "./components/header/header";
   import Navigation from "./components/navigation/navigation";
   import Footer from "./components/footer/footer";
@@ -28,6 +31,7 @@
   import Three from "./components/three/three";
 
   import {analytics} from "./mixins/analytics";
+  import {redirect} from "./mixins/global";
 
   export default {
     components: {
@@ -36,13 +40,16 @@
       Footer,
       Three
     },
+    computed: {
+      ...mapState(['audio'])
+    },
     methods: {
       getViewportsUnit: function() {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
       }
     },
-    mixins: [analytics],
+    mixins: [analytics, redirect],
     mounted() {
       this.getViewportsUnit();
       this.$store.commit('getResponsiveSize');
@@ -52,8 +59,10 @@
         this.$store.commit('getResponsiveSize');
       });
     },
-    beforeRouteEnter(to, from) {
-      console.log(to, from)
+    watch: {
+      audio: function(value) {
+        value && this.$refs.audio.play();
+      }
     }
   }
 </script>

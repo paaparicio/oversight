@@ -34,11 +34,9 @@ export const analytics = {
                 cookies: ['ga_oversight'],
                 js() {
                     _.$ga.enable();
-                    console.log(tarteaucitron)
                 },
                 fallback() {
                     _.$ga.disable();
-                    console.log(tarteaucitron)
                 }
             };
             (tarteaucitron.job = tarteaucitron.job || []).push('gaOversight');

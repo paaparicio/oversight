@@ -8,6 +8,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    audio: false,
+    redirect: 'Home',
     breakpoint: 1024,
     width: window.innerWidth,
     scene: new THREE.Scene(),
@@ -34,6 +36,12 @@ export default new Vuex.Store({
     },
     setMouseMove: function(state) {
       state.move = true;
+    },
+    setRedirection: function(state, value) {
+      state.redirect = value;
+    },
+    setAudioPlayer: function(state) {
+      state.audio = !state.audio;
     }
   },
   actions: {

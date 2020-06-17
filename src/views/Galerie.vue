@@ -26,7 +26,7 @@
             const {pictures} = _.$refs;
             const tl = new _.TimelineLite();
 
-            _.$store.commit('setRotation', (125 * Math.PI / 180));
+            _.$store.commit('setRotation', (90 * Math.PI / 180));
 
             if(this.width < this.breakpoint) {
                 tl

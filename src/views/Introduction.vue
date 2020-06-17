@@ -4,7 +4,7 @@
              alt="Logo Oversight">
 
         <router-link @click.native="onClick"
-                     :to="{name: 'Home'}">
+                     :to="{name: this.$store.state.redirect}">
             Commencer
         </router-link>
     </div>
@@ -16,10 +16,12 @@
     export default {
         name: "Introduction",
         computed: {
-          ...mapState(['width', 'breakpoint', 'camera', 'gyroscope'])
+          ...mapState(['width', 'breakpoint', 'camera', 'gyroscope', 'audio'])
         },
         methods: {
           onClick: function() {
+              this.$store.commit('setAudioPlayer');
+
               (this.width < this.breakpoint) ? this.$store.commit('setGyroscope') : this.$store.commit('setMouseMove')
           }
         },

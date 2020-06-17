@@ -13,18 +13,18 @@ import Introduction from "../views/Introduction";
 Vue.use(VueRouter);
 
   const routes = [
-  {path: '/', name: 'Introduction', component: Introduction},
-  {path: '/home', name: 'Home', component: Home},
-  {path: '/trailer', name: 'Trailer', component: Trailer},
-  {path: '/download', name: 'Download', component: Download},
-  {path: '/about', name: 'About', component: About},
-  {path: '/galerie', name: 'Galerie', component: Galerie},
-  {path: '/team', name: 'Team', component: Team},
-  {path: '/game', name: 'Game', component: Game}
+    {path: '/', name: 'Introduction', component: Introduction},
+    {path: '/home', name: 'Home', component: Home},
+    {path: '/trailer', name: 'Trailer', component: Trailer},
+    {path: '/download', name: 'Download', component: Download},
+    {path: '/about', name: 'About', component: About},
+    {path: '/galerie', name: 'Galerie', component: Galerie},
+    {path: '/team', name: 'Team', component: Team},
+    {path: '/game', name: 'Game', component: Game},
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   routes
 });
 
