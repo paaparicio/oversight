@@ -24,14 +24,14 @@
       "text": "Pour une immersion totale dans Oversight, le jeu se déroule dans un univers trans-device. Lors de votre connexion au jeu, vous devrez connecter votre téléphone afin d'interagir avec le monde totalitaire qu'est Oversight.",
       "image": "explication.png",
       "question": "Un aperçu du jeu ?",
-      "url": "https://www.youtube.com/embed/E-bGLtv6zHY"
+      "url": "https://www.youtube-nocookie.com/embed/WpRiF_Jtjk0"
     },
     "game": {
       "question": "Voulez - vous commencer l’expérience Oversight ?",
       "image": "inscriptions.png",
       "buttons": [
-        {"name": "Oui", "url": "Home"},
-        {"name": "Non", "url": "Home"}
+        {"name": "Oui", "url": "http://mobile-oversight.emilienvandevelde.fr"},
+        {"name": "Non", "url": "/home"}
       ],
       "instructions": "Il vous faut télécharger la version ordinateur du jeu pour de jouer."
     },
@@ -40,13 +40,13 @@
       "title": "Télécharger Oversight !",
       "description": "Lors de votre connexion au jeu, vous devrez connecter votre téléphone afin d'interagir avec le monde totalitaire qu'est Oversight.\nUne fois la version ordinateur téléchargé, il vous faudra retourner sur ce site afin d’accéder à la version mobile.",
       "games": [
-        {"name": "Windows", "logo": "windows.png", "file": "assets/games/Oversight.exe"},
-        {"name": "Mac OS", "logo": "mac.png", "file": "#"}
+        {"name": "Windows", "logo": "windows.png", "file": "http://oversight.emilienvandevelde.fr/oversight-win.zip"},
+        {"name": "Mac OS", "logo": "mac.png", "file": "http://oversight.emilienvandevelde.fr/oversight-mac.zip"}
       ]
     },
     "trailer": {
       "text": "Dans une société totalitaire, les habitants sont observés par des caméras et notés sur leurs moindre faits et gestes. Vous découvrirez un trajet semé d'embûches et d'occasions de perdre ou gagner des points.",
-      "url": "https://www.youtube.com/embed/E-bGLtv6zHY"
+      "url": "https://www.youtube-nocookie.com/embed/39mouawEoTY"
     },
     "team": {
       "persons": [

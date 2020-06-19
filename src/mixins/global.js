@@ -9,6 +9,7 @@ export const paragraphe = {
 export const redirect = {
     methods: {
         setFirstRedirection: function() {
+            console.log(this.$route)
             if(this.$route.name !== 'Introduction') {
                 this.$store.commit('setRedirection', this.$route.name);
                 this.$router.push({name: 'Introduction'});
@@ -17,5 +18,8 @@ export const redirect = {
     },
     created() {
         this.setFirstRedirection()
+    },
+    beforeRouteEnter(to, from) {
+        console.log(from);
     }
 };

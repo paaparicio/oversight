@@ -3,10 +3,10 @@
         <li v-for="(link, i) in $t('footer')"
             :key="i">
 
-            <router-link :to="link.url">
+            <a :href="link.url">
                 <i :class="link.icon"></i>
                 <span>{{ link.name }}</span>
-            </router-link>
+            </a>
         </li>
     </ul>
 </template>

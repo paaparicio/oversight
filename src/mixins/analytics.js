@@ -39,6 +39,7 @@ export const analytics = {
                     _.$ga.disable();
                 }
             };
+
             (tarteaucitron.job = tarteaucitron.job || []).push('gaOversight');
         }
     },

@@ -3,10 +3,14 @@
         <h2>{{ $t('views.game.question') }}</h2>
         <img :src="image" alt="Inscription de Oversight">
 
-        <router-link v-for="(button, i) in $t('views.game.buttons')"
-                     :key="i"
-                     :to="{name: button.url}">
-            {{button.name}}
+        <a :href="$t('views.game.buttons[0].url')"
+           target="_blank">
+
+            {{$t('views.game.buttons[0].name')}}
+        </a>
+
+        <router-link :to="$t('views.game.buttons[1].url')">
+            {{$t('views.game.buttons[1].name')}}
         </router-link>
 
         <p>{{ $t("views.game.instructions") }}</p>

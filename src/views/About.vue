@@ -120,6 +120,7 @@
             .--top {
                 flex-direction: column;
 
+                p {padding: 0}
                 p, div {width: 100%;}
 
                 div {

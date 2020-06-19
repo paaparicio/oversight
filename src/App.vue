@@ -60,8 +60,8 @@
       });
     },
     watch: {
-      audio: function(value) {
-        value && this.$refs.audio.play();
+      audio: function() {
+        // value && this.$refs.audio.play();
       }
     }
   }
